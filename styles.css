@@ -109,3 +109,94 @@ h2 {
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
 }
+
+.project {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2em;
+  margin-top: 1em;
+
+}
+
+.project-container {
+  display: flex;
+  align-items: center;
+}
+
+.project-img {
+  max-width: 150px;
+  max-height: 150px;
+  margin-right: 1em;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.project-info h3 {
+  margin: 0 0 0.5em 0;
+  font-size: 1.2em;
+}
+
+.project-info p {
+  margin: 0 0 1em 0;
+}
+
+.project-buttons {
+  display: flex;
+  gap: 1em;
+}
+
+.btn {
+  padding: 0.5em 1em;
+  background-color: #007BFF; /* Vibrant, popping blue */
+  color: #ffffff; /* White color for contrast */
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  width: 80px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+  background-color: #008CFF; /* Slightly lighter, more vibrant blue for hover */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  background-color: #0069D9; /* Slightly darker, vibrant blue for active (pressed) state */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transform: translateY(0);
+}
+
+#references {
+  margin-top: 40px;
+}
+
+.reference {
+  margin-bottom: 20px;
+}
+
+.reference h3 {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.reference p {
+  font-size: 0.9em;
+  color: #666;
+  margin: 2px 0;
+}

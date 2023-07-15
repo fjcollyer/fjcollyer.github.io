@@ -64,13 +64,17 @@ body {
   margin: 2px 0;
 }
 
-.about-entry {
+.about-entry,
+.job,
+.education-entry {
   margin-top: 20px;
   display: flex;
   align-items: center;
   margin-bottom: 15px;
 }
 
+.job img,
+.education-entry img,
 #profile-img {
   width: 50px;
   height: 50px;
@@ -80,43 +84,17 @@ body {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.about-info p {
-  margin: 2px 0;
-  color: #444;
-  font-size: 0.9em;
-}
-
-#experience,
-#education,
-#projects {
-  margin-top: 20px;
-}
-
-.job,
-.education-entry {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.job img,
-.education-entry img {
-  width: 50px;
-  height: 50px;
-  margin-right: 20px;
-  object-fit: cover;
-  border: 1px solid #eee;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
 .job-info h3,
-.education-info h3 {
+.education-info h3,
+.reference-info h3 {
   margin: 0;
   color: #333;
 }
 
 .job-info p,
-.education-info p {
+.education-info p,
+.about-info p,
+.reference-info p {
   margin: 2px 0;
   color: #444;
   font-size: 0.9em;
@@ -132,7 +110,6 @@ h2 {
   flex-direction: row;
   margin-bottom: 2em;
   margin-top: 1em;
-
 }
 
 .project-container {
@@ -141,8 +118,8 @@ h2 {
 }
 
 .project-img {
-  max-width: 150px;
-  max-height: 150px;
+  max-width: 152px;
+  max-height: 152x;
   margin-right: 1em;
   object-fit: contain;
   border-radius: 5px;
@@ -204,15 +181,4 @@ h2 {
 
 .reference {
   margin-bottom: 18px;
-}
-
-.reference-info h3 {
-  margin: 0;
-  color: #333;
-}
-
-.reference-info p {
-  margin: 2px 0;
-  color: #444;
-  font-size: 0.9em;
 }

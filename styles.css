@@ -35,12 +35,25 @@ body {
   margin: 1rem 0;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1170px) {
   #main-container {
     flex-direction: column;
   }
   .container {
     width: 90%;
+    margin: 1rem auto;
+
+  }
+  .project-img {
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: cover;
+  }
+  #main-title {
+    font-size: 1.5rem;
+  }
+  #contact-info {
+    font-size: 1rem !important;
   }
 }
 
@@ -138,6 +151,8 @@ h2 {
 
 .project-info p {
   margin: 0 0 1em 0;
+  color: #444;
+  font-size: 0.9em;
 }
 
 .project-buttons {
@@ -147,8 +162,8 @@ h2 {
 
 .btn {
   padding: 0.5em 1em;
-  background-color: #007BFF; /* Vibrant, popping blue */
-  color: #ffffff; /* White color for contrast */
+  background-color: #007BFF;
+  color: #ffffff;
   border: none;
   border-radius: 4px;
   text-decoration: none;
@@ -163,14 +178,14 @@ h2 {
 }
 
 .btn:hover {
-  background-color: #008CFF; /* Slightly lighter, more vibrant blue for hover */
+  background-color: #008CFF;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   transform: translateY(-2px);
 }
 
 .btn:active {
-  background-color: #0069D9; /* Slightly darker, vibrant blue for active (pressed) state */
+  background-color: #0069D9;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transform: translateY(0);
 }

@@ -11,6 +11,12 @@ body {
   flex-direction: column;
 }
 
+p {
+  margin: 2px 0;
+  color: #444;
+  font-size: 0.9em;
+}
+
 #main-title {
   text-align: center;
   margin-bottom: 0px;
@@ -38,6 +44,7 @@ body {
 @media screen and (max-width: 1170px) {
   #main-container {
     flex-direction: column;
+    width: 96%;
   }
   .container {
     width: 90%;
@@ -55,6 +62,13 @@ body {
   #contact-info {
     font-size: 1rem !important;
   }
+  .btn {
+    padding: 0.3em 0em !important;
+  }
+  .project-buttons {
+    gap: 0.5em !important;; 
+  }
+  
 }
 
 #header h2,
@@ -70,11 +84,6 @@ body {
 
 #contact-info span {
   margin: 0 10px;
-}
-
-#about p {
-  color: #666;
-  margin: 2px 0;
 }
 
 .about-entry,
@@ -102,15 +111,6 @@ body {
 .reference-info h3 {
   margin: 0;
   color: #333;
-}
-
-.job-info p,
-.education-info p,
-.about-info p,
-.reference-info p {
-  margin: 2px 0;
-  color: #444;
-  font-size: 0.9em;
 }
 
 h2 {
@@ -144,15 +144,15 @@ h2 {
   width: 100%;
 }
 
-.project-info h3 {
-  margin: 0 0 0.5em 0;
-  font-size: 1.2em;
-}
-
 .project-info p {
   margin: 0 0 1em 0;
   color: #444;
   font-size: 0.9em;
+}
+
+.project-info h3 {
+  margin: 0 0 0.5em 0;
+  font-size: 1.2em;
 }
 
 .project-buttons {

@@ -1,8 +1,0 @@
-I need it to be evaluated as I am a new beginner at AI and need to know if this even makes sense:
-
-This is my idea for a portfolio project.
-
-I will have a Three.js app. In the app the user plays a game of connect four vs my neural net.
-The neural net will be pre trained on my M1 Mac. Upon it being the neural nets move in the game
-I want to display a visualization of the neural net taking the input of the current game state
-and producing an output/move.

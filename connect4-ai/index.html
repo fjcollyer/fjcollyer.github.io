@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title>FJC Connect 4 AI</title>
-    <!-- My own JS -->
-    <script src = 'ai.js'></script>
+    <script src='ai.js'></script>
     <style>
-      body { margin: 0; }
+        body { margin: 0; }
+        .results { margin: 20px; }
     </style>
-  </head>
-  <body>
-    <button onclick="getAIMove()">Get AI Move</button>
+</head>
+<body>
     <script src="https://threejs.org/build/three.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@latest/examples/js/controls/OrbitControls.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@latest/examples/js/loaders/GLTFLoader.js"></script>
-    
+
+    <div class="results">
+        <button onclick="getAiMoveAndQValues()">Get AI Move and Q-values</button>
+        <div id="moveResult">Move: -</div>
+        <div id="qValuesResult">Q-values: -</div>
+    </div>
+
     <script type="module" src="main.js"></script>
-  </body>  
+    <script src="requestHandler.js"></script> <!-- This is the new JS file we'll be adding -->
+</body>  
 </html>

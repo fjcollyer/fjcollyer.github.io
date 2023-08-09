@@ -1,0 +1,184 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f6fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.main-container {
+  display: flex;
+  width: 90%;
+  height: 80%;
+  overflow-y: auto;
+}
+
+.left-section,
+.right-section {
+  flex: 1;
+  padding: 1rem;
+}
+
+.left-section iframe {
+  width: 100%;
+  height: 50%;
+  min-height: 150px;  /* Set a minimum height for the video player */
+}
+
+.project-description {
+  width: 100%;
+  height: 50%;
+  min-height: 100px;
+  overflow: auto;
+  border: 1px solid gray; 
+  white-space: normal;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.container {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#statusMessage {
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #2C3E50;
+  margin-bottom: 1.25rem;
+}
+
+h1 {
+  text-align: center;
+  color: #2C3E50;
+  margin-bottom: 1.875rem; 
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem; 
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem; 
+  width: 100%;
+}
+
+.row div {
+  border: 1px solid #7f8c8d;
+  width: calc(10vw - 0.5rem); 
+  height: calc(10vw - 0.5rem);
+  border-radius: 50%;
+  max-width: 50px;  
+  max-height: 50px;  
+  margin: 0 0.125rem;
+}
+
+.row .empty {
+background-color: #ecf0f1;
+}
+
+.row .player {
+background-color: #e74c3c;
+}
+
+.row .ai {
+background-color: #f39c12;
+}
+
+.q-values {
+  display: flex;
+  justify-content: space-between; 
+  margin-bottom: 1rem; 
+}
+
+.q-values span {
+  border: 1px solid #7f8c8d;
+  width: calc(10vw - 0.5rem); 
+  max-width: 50px;  
+  max-height: 50px;  
+  margin: 0 0.125rem;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center; 
+}
+
+.buttons button:first-child {
+  margin-right: 4rem;
+}
+
+button {
+background-color: #3498db;
+color: #fff;
+border: none;
+border-radius: 5px;
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+transition: background-color 0.3s;
+width: 150px;
+}
+
+button:hover {
+background-color: #2980b9;
+}
+
+button:disabled {
+background-color: #bdc3c7;
+}
+
+.row div:hover:not(.player):not(.ai) {
+background-color: #bdc3c7;
+cursor: pointer;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1040px) {
+  .main-container {
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+      padding-bottom: 1.25rem; /* use rem */
+      max-height: 90vh;
+      overflow-y: auto;
+  }
+
+  .row, .q-values, .buttons {
+      padding: 0 1rem; /* use rem */
+      width: 100%; /* set to full width for mobile */
+      box-sizing: border-box; /* to include padding in the width */
+  }
+
+  .buttons {
+    margin-bottom: 2rem;
+  }
+
+  .row div {
+    margin: 0 0.0625rem;
+  }
+
+  .project-description {
+    height: 30vh;  /* This sets the height relative to 30% of the viewport height */
+  }
+
+  .left-section iframe {
+    height: 30vh;  /* This sets the height relative to 30% of the viewport height */
+  }
+}

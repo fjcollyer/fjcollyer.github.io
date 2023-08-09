@@ -1,26 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <title>FJC Connect 4 AI</title>
-    <script src='ai.js'></script>
-    <style>
-        body { margin: 0; }
-        .results { margin: 20px; }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect 4 vs AI</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <script src="https://threejs.org/build/three.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@latest/examples/js/controls/OrbitControls.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@latest/examples/js/loaders/GLTFLoader.js"></script>
+    <div class="main-container">
 
-    <div class="results">
-        <button onclick="getAiMoveAndQValues()">Get AI Move and Q-values</button>
-        <div id="moveResult">Move: -</div>
-        <div id="qValuesResult">Q-values: -</div>
+        <div class="left-section">
+          <iframe src="https://www.youtube.com/embed/n7cOlBxtKSo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <div class="project-description" tabindex="0" role="textbox" aria-readonly="true">
+            The AI is a Deep Q-Learning model that learns to play Connect 4 by playing against itself.
+            <br><br>
+            No human data was used to train the model. The model was trained for 100,000 games, which took about 2 hours on my laptop.
+            <br><br>
+            Watch the video for a detailed explanation.
+            <br><br>
+            The code for the AI is available on GitHub: Link here
+            <br><br>
+            Created by Fredrik James Collyer.
+          </div>
+        </div>
+
+        <div class="right-section">
+            <div class="container">
+                <h1>Connect 4 vs AI</h1>
+                <p id="statusMessage">Your turn!</p>
+                <div class="board">
+                  <div class="row" data-row="0"></div>
+                  <div class="row" data-row="1"></div>
+                  <div class="row" data-row="2"></div>
+                  <div class="row" data-row="3"></div>
+                  <div class="row" data-row="4"></div>
+                  <div class="row" data-row="5"></div>
+                </div>
+                <div class="q-values">
+                  <span data-col="0">-</span>
+                  <span data-col="1">-</span>
+                  <span data-col="2">-</span>
+                  <span data-col="3">-</span>
+                  <span data-col="4">-</span>
+                  <span data-col="5">-</span>
+                  <span data-col="6">-</span>
+                </div>
+                <div class="buttons">
+                    <button id="aiMove" onclick="performAiMove()">AI's Move</button>
+                    <button id="resetGame" onclick="startGame(firstPlayer)">Reset Board</button>
+                </div>
+            </div>
+        </div>
+
     </div>
+    <script src="script.js"></script>
+</body>
 
-    <script type="module" src="main.js"></script>
-    <script src="requestHandler.js"></script> <!-- This is the new JS file we'll be adding -->
-</body>  
 </html>

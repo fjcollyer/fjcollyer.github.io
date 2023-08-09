@@ -14,8 +14,7 @@ function startGame(firstPlayer) {
     if (firstPlayer === "ai") {
         currentPlayer = 1;
         isUsersTurn = false;
-        document.getElementById("aiMove").disabled = false;
-        updateQValues();
+        updateQValues(); // also enables the aiMove button
     }
     else if (firstPlayer === "user"){
         currentPlayer = -1;
@@ -28,6 +27,11 @@ function startGame(firstPlayer) {
 }
 
 function updateQValues() {
+    // Display the status and spinner
+    const statusMessageElement = document.getElementById("statusMessage");
+    const spinnerElement = document.getElementById("spinner");
+    statusMessageElement.textContent = "AI is evaluating the position";
+    spinnerElement.style.display = "inline";
     fetch(`${API_ENDPOINT}/get_q_values`, {
         method: 'POST',
         headers: {
@@ -55,7 +59,6 @@ function updateQValues() {
             }
         });
 
-        // Update text and color for each cell
         qValues.forEach((value, index) => {
             const cell = document.querySelector(`[data-col="${index}"]`);
             cell.textContent = value.toFixed(2);
@@ -67,6 +70,11 @@ function updateQValues() {
                 cell.style.color = "black"; // default color for other cells
             }
         });
+        // Set the aiMove button to enabled after the Q-values are updated 
+        document.getElementById("aiMove").disabled = false;
+        // Hide spinner and update the turn message once data is processed
+        spinnerElement.style.display = "none";
+        updateTurnMessage();
     });
 }
 
@@ -113,8 +121,7 @@ document.querySelector('.board').addEventListener('click', (event) => {
             board[i][column] = -1;
             isUsersTurn = false;  // Set it to AI's turn
             updateTurnMessage();
-            updateQValues();
-            document.getElementById("aiMove").disabled = false;
+            updateQValues(); // also sets the aiMove button to enabled
             renderBoard(); // Last thing to do is render the board
             return;
         }
@@ -124,6 +131,13 @@ document.querySelector('.board').addEventListener('click', (event) => {
 function performAiMove() {
     if (isUsersTurn) return;  // Prevents AI from making a move if it's not its turn
     resetQValuesDisplay();
+
+    // Display the status and spinner
+    const statusMessageElement = document.getElementById("statusMessage");
+    const spinnerElement = document.getElementById("spinner");
+    statusMessageElement.textContent = "AI is evaluating the position";
+    spinnerElement.style.display = "inline";
+
     console.log("AI's turn, passing it this board:");
     // make copy of board for logging purposes
     let boardCopy = [];
@@ -152,6 +166,9 @@ function performAiMove() {
         updateTurnMessage();
         document.getElementById("aiMove").disabled = true;
         renderBoard();
+        // Hide spinner and update the turn message once data is processed
+        spinnerElement.style.display = "none";
+        updateTurnMessage();
     });
 }
 

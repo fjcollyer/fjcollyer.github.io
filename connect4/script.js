@@ -28,7 +28,7 @@ function startGame(firstPlayer) {
 
 function updateQValues() {
     // Display the status and spinner
-    const statusMessageElement = document.getElementById("statusMessage");
+    const statusMessageElement = document.getElementById("statusText");
     const spinnerElement = document.getElementById("spinner");
     statusMessageElement.textContent = "AI is evaluating the position";
     spinnerElement.style.display = "inline";
@@ -133,7 +133,7 @@ function performAiMove() {
     resetQValuesDisplay();
 
     // Display the status and spinner
-    const statusMessageElement = document.getElementById("statusMessage");
+    const statusMessageElement = document.getElementById("statusText");
     const spinnerElement = document.getElementById("spinner");
     statusMessageElement.textContent = "AI is evaluating the position";
     spinnerElement.style.display = "inline";
@@ -248,7 +248,9 @@ function checkDraw(board) {
 }
 
 function updateTurnMessage() {
-  const statusMessageElement = document.getElementById("statusMessage");
+  const statusMessageElement = document.getElementById("statusText");
+  const spinnerElement = document.getElementById("spinner");
+  spinnerElement.style.display = "none";
   if (isUsersTurn) {
       statusMessageElement.textContent = "Your turn!";
   } else {

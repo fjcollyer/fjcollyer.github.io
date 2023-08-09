@@ -38,8 +38,34 @@ function updateQValues() {
     .then(response => response.json())
     .then(data => {
         const qValues = data.q_values;
+        let maxQValue = -Infinity;
+        let minQValue = Infinity;
+        let maxIndex = -1;
+        let minIndex = -1;
+
+        // Find the highest and lowest Q-values and their indices
         qValues.forEach((value, index) => {
-            document.querySelector(`[data-col="${index}"]`).textContent = value.toFixed(2);
+            if (value > maxQValue) {
+                maxQValue = value;
+                maxIndex = index;
+            }
+            if (value < minQValue) {
+                minQValue = value;
+                minIndex = index;
+            }
+        });
+
+        // Update text and color for each cell
+        qValues.forEach((value, index) => {
+            const cell = document.querySelector(`[data-col="${index}"]`);
+            cell.textContent = value.toFixed(2);
+            if (index === maxIndex) {
+                cell.style.color = "green";
+            } else if (index === minIndex) {
+                cell.style.color = "red";
+            } else {
+                cell.style.color = "black"; // default color for other cells
+            }
         });
     });
 }

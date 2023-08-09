@@ -93,11 +93,11 @@ background-color: #ecf0f1;
 }
 
 .row .player {
-background-color: #e74c3c;
+  background-color: #FF0000; /* Bright Red */
 }
 
 .row .ai {
-background-color: #f39c12;
+  background-color: #0000FF; /* Bright Blue */
 }
 
 .q-values {

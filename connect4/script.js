@@ -31,7 +31,7 @@ function startGame(firstPlayer) {
 function updateQValues() {
     // Display the status 
     const statusMessageElement = document.getElementById("statusText");
-    statusMessageElement.innerHTML = 'AI is making a move <span style="font-size: 0.5em; display: inline-block; vertical-align: middle;">🔄</span>';
+    statusMessageElement.innerHTML = 'AI evaluating position <span style="font-size: 0.5em; display: inline-block; vertical-align: middle;">🔄</span>';
 
     fetch(`${API_ENDPOINT}/get_q_values`, {
         method: 'POST',

@@ -139,7 +139,7 @@ background-color: #ecf0f1;
 }
 
 .buttons button:first-child {
-  margin-right: 4rem;
+  margin-right: 2rem;
 }
 
 button {
@@ -200,7 +200,28 @@ cursor: pointer;
   }
 
   .left-section, .right-section {
-    max-width: 90%;  /* This will ensure neither section exceeds 90% width */
+    max-width: 98%;  /* This will ensure neither section exceeds 90% width */
     margin: 0 auto;  /* Centers the section if it's not taking up full width */
-}
+  }
+
+  body {
+    font-size: 0.7rem; /* Adjust as necessary, smaller value = smaller text */
+  }
+
+  /* You can target specific elements or classes if you only want to reduce size for some elements */
+  h1 {
+    font-size: 1.2rem; /* Adjusted for mobile */
+  }
+
+  #statusMessage {
+    font-size: 0.8rem; /* Adjusted for mobile */
+  }
+
+  .q-values span {
+    font-size: 0.8rem; /* Adjusted for mobile, you can make this even smaller if required */
+  }
+
+  button {
+    font-size: 0.6rem; /* Adjusted for mobile */
+  }
 }

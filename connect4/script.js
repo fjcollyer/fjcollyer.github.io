@@ -29,11 +29,9 @@ function startGame(firstPlayer) {
 }
 
 function updateQValues() {
-    // Display the status and spinner
+    // Display the status 
     const statusMessageElement = document.getElementById("statusText");
-    const spinnerElement = document.getElementById("spinner");
-    statusMessageElement.textContent = "AI is evaluating the position";
-    spinnerElement.style.display = "inline";
+    statusMessageElement.textContent = "AI evaluating position 🔄";
     fetch(`${API_ENDPOINT}/get_q_values`, {
         method: 'POST',
         headers: {
@@ -79,8 +77,6 @@ function updateQValues() {
         });
         // Set the aiMove button to enabled after the Q-values are updated 
         document.getElementById("aiMove").disabled = false;
-        // Hide spinner and update the turn message once data is processed
-        spinnerElement.style.display = "none";
         updateTurnMessage();
     });
 }
@@ -137,11 +133,9 @@ function performAiMove() {
     if (isUsersTurn || bestAiAction === null) return;  // Prevents AI from making a move if it's not its turn or there's no stored action
     resetQValuesDisplay();
 
-    // Display the status and spinner
+    // Display the status
     const statusMessageElement = document.getElementById("statusText");
-    const spinnerElement = document.getElementById("spinner");
-    statusMessageElement.textContent = "AI is making a move";
-    spinnerElement.style.display = "inline";
+    statusMessageElement.textContent = "AI is making a move 🔄";
 
     console.log("AI's turn, passing it this board:");
     // make copy of board for logging purposes
@@ -175,8 +169,7 @@ function performAiMove() {
 
     isUsersTurn = true;  // Set it back to player's turn
     document.getElementById("aiMove").disabled = true;
-    // Hide spinner and update the turn message once data is processed
-    spinnerElement.style.display = "none";
+    // Uupdate the turn message once data is processed
     updateTurnMessage();
     renderBoard();
 }
@@ -258,10 +251,6 @@ function checkDraw(board) {
 
 function updateTurnMessage() {
     const statusMessageElement = document.getElementById("statusText");
-    const spinnerElement = document.getElementById("spinner");
-    if(spinnerElement) {
-        spinnerElement.style.display = "none";
-    }
     if (!statusMessageElement) {
         console.log("No status message element found");
         return;

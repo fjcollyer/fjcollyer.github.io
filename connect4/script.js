@@ -31,7 +31,8 @@ function startGame(firstPlayer) {
 function updateQValues() {
     // Display the status 
     const statusMessageElement = document.getElementById("statusText");
-    statusMessageElement.textContent = "AI evaluating position 🔄";
+    statusMessageElement.innerHTML = 'AI is making a move <span style="font-size: 0.5em; display: inline-block; vertical-align: middle;">🔄</span>';
+
     fetch(`${API_ENDPOINT}/get_q_values`, {
         method: 'POST',
         headers: {
@@ -135,7 +136,8 @@ function performAiMove() {
 
     // Display the status
     const statusMessageElement = document.getElementById("statusText");
-    statusMessageElement.textContent = "AI is making a move 🔄";
+    statusMessageElement.innerHTML = 'AI is making a move <span style="font-size: 0.5em; display: inline-block; vertical-align: middle;">🔄</span>';
+
 
     console.log("AI's turn, passing it this board:");
     // make copy of board for logging purposes

@@ -4,11 +4,9 @@ const board = Array(6).fill(null).map(() => Array(7).fill(0));
 let currentPlayer;
 let isUsersTurn;
 let firstPlayer = "user";
-let gameIsOver = false;
 let bestAiAction = null;
 
 function startGame(firstPlayer) {
-    gameIsOver = false;
     bestAiAction = null;
     for (let row of board) {
         for (let i = 0; i < row.length; i++) {
@@ -31,9 +29,6 @@ function startGame(firstPlayer) {
 }
 
 function updateQValues() {
-    if (gameIsOver) {
-        return;
-    }
     // Display the status and spinner
     const statusMessageElement = document.getElementById("statusText");
     const spinnerElement = document.getElementById("spinner");
@@ -119,12 +114,11 @@ function checkGameOver() {
       document.getElementById("aiMove").disabled = true; 
       const statusMessageElement = document.getElementById("statusMessage");
       statusMessageElement.textContent = "Game Over!";
-      gameIsOver = true;
   }
 }
 
 document.querySelector('.board').addEventListener('click', (event) => {
-    if (!isUsersTurn || gameIsOver) return;  // Prevents player from making a move if it's not their turn
+    if (!isUsersTurn) return;  // Prevents player from making a move if it's not their turn
 
     const column = [...event.target.parentElement.children].indexOf(event.target);
     for (let i = 5; i >= 0; i--) {
@@ -140,7 +134,7 @@ document.querySelector('.board').addEventListener('click', (event) => {
 });
 
 function performAiMove() {
-    if (isUsersTurn || gameIsOver || bestAiAction === null) return;  // Prevents AI from making a move if it's not its turn or there's no stored action
+    if (isUsersTurn || bestAiAction === null) return;  // Prevents AI from making a move if it's not its turn or there's no stored action
     resetQValuesDisplay();
 
     // Display the status and spinner
@@ -255,8 +249,6 @@ function checkDraw(board) {
 }
 
 function updateTurnMessage() {
-    if (gameIsOver) return;
-    if(!statusMessageElement) return; 
     const statusMessageElement = document.getElementById("statusText");
     const spinnerElement = document.getElementById("spinner");
     if(spinnerElement) {

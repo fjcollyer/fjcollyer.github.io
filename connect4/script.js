@@ -124,10 +124,10 @@ document.querySelector('.board').addEventListener('click', (event) => {
     for (let i = 5; i >= 0; i--) {
         if (board[i][column] === 0) {
             board[i][column] = -1;
-            renderBoard();
             isUsersTurn = false;  // Set it to AI's turn
             updateTurnMessage();
             updateQValues(); // also sets the aiMove button to enabled
+            renderBoard(); // Last thing to do is render the board
             return;
         }
     }
@@ -161,7 +161,6 @@ function performAiMove() {
             break;
         }
     }
-    renderBoard();
 
     // Reset the bestAiAction
     bestAiAction = null;
@@ -171,6 +170,7 @@ function performAiMove() {
     // Hide spinner and update the turn message once data is processed
     spinnerElement.style.display = "none";
     updateTurnMessage();
+    renderBoard();
 }
 
 function hasGameEnded(board) {

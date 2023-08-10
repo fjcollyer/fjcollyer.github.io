@@ -172,7 +172,6 @@ function performAiMove() {
     bestAiAction = null;
 
     isUsersTurn = true;  // Set it back to player's turn
-    updateTurnMessage();
     document.getElementById("aiMove").disabled = true;
     renderBoard();
     // Hide spinner and update the turn message once data is processed
@@ -257,14 +256,16 @@ function checkDraw(board) {
 
 function updateTurnMessage() {
     if (gameIsOver) return;
-  const statusMessageElement = document.getElementById("statusText");
-  const spinnerElement = document.getElementById("spinner");
-  spinnerElement.style.display = "none";
-  if (isUsersTurn) {
-      statusMessageElement.textContent = "Your turn!";
-  } else {
-      statusMessageElement.textContent = "AI's turn!";
-  }
+    const statusMessageElement = document.getElementById("statusText");
+    const spinnerElement = document.getElementById("spinner");
+    if(spinnerElement) {
+        spinnerElement.style.display = "none";
+    }
+    if (isUsersTurn) {
+        statusMessageElement.textContent = "Your turn!";
+    } else {
+        statusMessageElement.textContent = "AI's turn!";
+    }
 }
 
 startGame(firstPlayer);

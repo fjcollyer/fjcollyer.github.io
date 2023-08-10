@@ -5,8 +5,11 @@ let currentPlayer;
 let isUsersTurn;
 let firstPlayer = "user";
 let gameIsOver = false;
+let bestAiAction = null;
 
 function startGame(firstPlayer) {
+    gameIsOver = false;
+    bestAiAction = null;
     for (let row of board) {
         for (let i = 0; i < row.length; i++) {
             row[i] = 0;
@@ -22,13 +25,15 @@ function startGame(firstPlayer) {
         isUsersTurn = true;
         document.getElementById("aiMove").disabled = true;
     }
-    gameIsOver = false;
     updateTurnMessage();
     resetQValuesDisplay();
     renderBoard();
 }
 
 function updateQValues() {
+    if (gameIsOver) {
+        return;
+    }
     // Display the status and spinner
     const statusMessageElement = document.getElementById("statusText");
     const spinnerElement = document.getElementById("spinner");
@@ -60,6 +65,9 @@ function updateQValues() {
                 minIndex = index;
             }
         });
+
+        // Update the bestAiAction to be used in the aiMove function
+        bestAiAction = maxIndex;
 
         qValues.forEach((value, index) => {
             const cell = document.querySelector(`[data-col="${index}"]`);
@@ -116,7 +124,7 @@ function checkGameOver() {
 }
 
 document.querySelector('.board').addEventListener('click', (event) => {
-    if (!isUsersTurn) return;  // Prevents player from making a move if it's not their turn
+    if (!isUsersTurn || gameIsOver) return;  // Prevents player from making a move if it's not their turn
 
     const column = [...event.target.parentElement.children].indexOf(event.target);
     for (let i = 5; i >= 0; i--) {
@@ -132,7 +140,7 @@ document.querySelector('.board').addEventListener('click', (event) => {
 });
 
 function performAiMove() {
-    if (isUsersTurn) return;  // Prevents AI from making a move if it's not its turn
+    if (isUsersTurn || gameIsOver || bestAiAction === null) return;  // Prevents AI from making a move if it's not its turn or there's no stored action
     resetQValuesDisplay();
 
     // Display the status and spinner
@@ -148,31 +156,28 @@ function performAiMove() {
         boardCopy[i] = board[i].slice();
     }
     console.log(boardCopy);
-    fetch(`${API_ENDPOINT}/get_action`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ state: board, epsilon: 0 })
-    })
-    .then(response => response.json())
-    .then(data => {
-        const action = data.action;
-        console.log(`AI chose column ${action}`);
-        for (let i = 5; i >= 0; i--) {
-            if (board[i][action] === 0) {
-                board[i][action] = 1;
-                break;
-            }
+
+    // Use the best action we stored
+    const action = bestAiAction;
+
+    console.log(`AI chose column ${action}`);
+    for (let i = 5; i >= 0; i--) {
+        if (board[i][action] === 0) {
+            board[i][action] = 1;
+            break;
         }
-        isUsersTurn = true;  // Set it back to player's turn
-        updateTurnMessage();
-        document.getElementById("aiMove").disabled = true;
-        renderBoard();
-        // Hide spinner and update the turn message once data is processed
-        spinnerElement.style.display = "none";
-        updateTurnMessage();
-    });
+    }
+
+    // Reset the bestAiAction
+    bestAiAction = null;
+
+    isUsersTurn = true;  // Set it back to player's turn
+    updateTurnMessage();
+    document.getElementById("aiMove").disabled = true;
+    renderBoard();
+    // Hide spinner and update the turn message once data is processed
+    spinnerElement.style.display = "none";
+    updateTurnMessage();
 }
 
 function hasGameEnded(board) {
@@ -251,6 +256,7 @@ function checkDraw(board) {
 }
 
 function updateTurnMessage() {
+    if (gameIsOver) return;
   const statusMessageElement = document.getElementById("statusText");
   const spinnerElement = document.getElementById("spinner");
   spinnerElement.style.display = "none";

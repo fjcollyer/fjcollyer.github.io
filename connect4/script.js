@@ -259,6 +259,8 @@ function updateTurnMessage() {
     if(!statusMessageElement) return; 
     const statusMessageElement = document.getElementById("statusText");
     const spinnerElement = document.getElementById("spinner");
+    if(!statusMessageElement) return; 
+    if(!spinnerElement) return;
     if(spinnerElement) {
         spinnerElement.style.display = "none";
     }

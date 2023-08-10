@@ -204,7 +204,7 @@ cursor: pointer;
   }
 
   .q-values span {
-    font-size: 0.8rem; /* Adjusted for mobile, you can make this even smaller if required */
+    font-size: 0.6rem; /* Adjusted for mobile, you can make this even smaller if required */
   }
 
   button {

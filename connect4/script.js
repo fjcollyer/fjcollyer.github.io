@@ -254,6 +254,10 @@ function updateTurnMessage() {
     if(spinnerElement) {
         spinnerElement.style.display = "none";
     }
+    if (!statusMessageElement) {
+        console.log("No status message element found");
+        return;
+    }
     if (isUsersTurn) {
         statusMessageElement.textContent = "Your turn!";
     } else {

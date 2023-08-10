@@ -167,10 +167,10 @@ function performAiMove() {
 
     isUsersTurn = true;  // Set it back to player's turn
     document.getElementById("aiMove").disabled = true;
-    renderBoard();
     // Hide spinner and update the turn message once data is processed
     spinnerElement.style.display = "none";
     updateTurnMessage();
+    renderBoard();
 }
 
 function hasGameEnded(board) {

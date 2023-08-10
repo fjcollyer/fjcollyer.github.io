@@ -4,6 +4,7 @@ const board = Array(6).fill(null).map(() => Array(7).fill(0));
 let currentPlayer;
 let isUsersTurn;
 let firstPlayer = "user";
+let gameIsOver = false;
 
 function startGame(firstPlayer) {
     for (let row of board) {
@@ -21,6 +22,7 @@ function startGame(firstPlayer) {
         isUsersTurn = true;
         document.getElementById("aiMove").disabled = true;
     }
+    gameIsOver = false;
     updateTurnMessage();
     resetQValuesDisplay();
     renderBoard();
@@ -109,6 +111,7 @@ function checkGameOver() {
       document.getElementById("aiMove").disabled = true; 
       const statusMessageElement = document.getElementById("statusMessage");
       statusMessageElement.textContent = "Game Over!";
+      gameIsOver = true;
   }
 }
 
@@ -135,7 +138,7 @@ function performAiMove() {
     // Display the status and spinner
     const statusMessageElement = document.getElementById("statusText");
     const spinnerElement = document.getElementById("spinner");
-    statusMessageElement.textContent = "AI is evaluating the position";
+    statusMessageElement.textContent = "AI is making a move";
     spinnerElement.style.display = "inline";
 
     console.log("AI's turn, passing it this board:");

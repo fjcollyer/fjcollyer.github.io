@@ -256,6 +256,7 @@ function checkDraw(board) {
 
 function updateTurnMessage() {
     if (gameIsOver) return;
+    if(!statusMessageElement) return; 
     const statusMessageElement = document.getElementById("statusText");
     const spinnerElement = document.getElementById("spinner");
     if(spinnerElement) {

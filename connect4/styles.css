@@ -1,3 +1,7 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f5f6fa;
@@ -13,7 +17,7 @@ body {
   display: flex;
   width: 90%;
   height: 80%;
-  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .left-section,
@@ -116,7 +120,7 @@ background-color: #ecf0f1;
 
 .q-values {
   display: flex;
-  justify-content: space-between; 
+  justify-content: center;
   margin-bottom: 1rem; 
 }
 
@@ -125,8 +129,8 @@ background-color: #ecf0f1;
   width: calc(10vw - 0.5rem); 
   max-width: 50px;  
   max-height: 50px;  
-  margin: 0 0.125rem;
   text-align: center;
+  margin: 0 0.125rem;
 }
 
 .buttons {
@@ -171,7 +175,6 @@ cursor: pointer;
       height: auto;
       padding-bottom: 1.25rem; /* use rem */
       max-height: 90vh;
-      overflow-y: auto;
   }
 
   .row, .q-values, .buttons {
@@ -195,4 +198,9 @@ cursor: pointer;
   .left-section iframe {
     height: 30vh;  /* This sets the height relative to 30% of the viewport height */
   }
+
+  .left-section, .right-section {
+    max-width: 90%;  /* This will ensure neither section exceeds 90% width */
+    margin: 0 auto;  /* Centers the section if it's not taking up full width */
+}
 }

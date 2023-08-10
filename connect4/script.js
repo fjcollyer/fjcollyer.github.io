@@ -37,7 +37,9 @@ function updateQValues() {
     fetch(`${API_ENDPOINT}/get_q_values`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Origin': 'https://fjcollyer.github.io/'
+
         },
         body: JSON.stringify({ state: board })
     })

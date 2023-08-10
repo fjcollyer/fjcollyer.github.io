@@ -105,16 +105,6 @@ function renderBoard() {
             rowElement.appendChild(cell);
         }
     }
-    checkGameOver();
-}
-
-function checkGameOver() {
-  if (hasGameEnded(board)) {
-      isUsersTurn = false; 
-      document.getElementById("aiMove").disabled = true; 
-      const statusMessageElement = document.getElementById("statusText");
-      statusMessageElement.textContent = "Game Over!";
-  }
 }
 
 document.querySelector('.board').addEventListener('click', (event) => {
@@ -124,6 +114,14 @@ document.querySelector('.board').addEventListener('click', (event) => {
     for (let i = 5; i >= 0; i--) {
         if (board[i][column] === 0) {
             board[i][column] = -1;
+            if (hasGameEnded(board)) {
+                isUsersTurn = false;
+                document.getElementById("aiMove").disabled = true;
+                const statusMessageElement = document.getElementById("statusText");
+                statusMessageElement.textContent = "Game Over!";
+                renderBoard();
+                return;
+            }
             isUsersTurn = false;  // Set it to AI's turn
             updateTurnMessage();
             updateQValues(); // also sets the aiMove button to enabled
@@ -162,6 +160,14 @@ function performAiMove() {
         }
     }
 
+    if (hasGameEnded(board)) {
+        isUsersTurn = false;
+        document.getElementById("aiMove").disabled = true;
+        const statusMessageElement = document.getElementById("statusText");
+        statusMessageElement.textContent = "Game Over!";
+        renderBoard();
+        return;
+    }
     // Reset the bestAiAction
     bestAiAction = null;
 

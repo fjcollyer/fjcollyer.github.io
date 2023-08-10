@@ -112,7 +112,7 @@ function checkGameOver() {
   if (hasGameEnded(board)) {
       isUsersTurn = false; 
       document.getElementById("aiMove").disabled = true; 
-      const statusMessageElement = document.getElementById("statusMessage");
+      const statusMessageElement = document.getElementById("statusText");
       statusMessageElement.textContent = "Game Over!";
   }
 }

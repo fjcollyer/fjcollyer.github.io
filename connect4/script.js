@@ -3,7 +3,7 @@ const board = Array(6).fill(null).map(() => Array(7).fill(0));
 
 let currentPlayer;
 let isUsersTurn;
-let firstPlayer = "user";
+let firstPlayer = "ai";
 let bestAiAction = null;
 
 function startGame(firstPlayer) {

@@ -20,6 +20,17 @@ body {
   overflow-x: hidden;
 }
 
+.back-button {
+  position: absolute;
+  top: 20px; /* adjust this value based on how far down from the top you want the button to be */
+  left: 50%; /* this moves the left edge of the button to the middle of the screen */
+  transform: translateX(-50%); /* this centers the button */
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+
 .left-section,
 .right-section {
   flex: 1;

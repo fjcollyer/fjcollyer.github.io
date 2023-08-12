@@ -114,6 +114,13 @@ function renderBoard() {
 document.querySelector('.board').addEventListener('click', (event) => {
     if (!isUsersTurn) return;  // Prevents player from making a move if it's not their turn
 
+    // Check if the clicked target is a valid cell
+    if (!event.target.classList.contains('empty') && 
+        !event.target.classList.contains('ai') && 
+        !event.target.classList.contains('player')) {
+        return;
+    }
+
     const column = [...event.target.parentElement.children].indexOf(event.target);
     for (let i = 5; i >= 0; i--) {
         if (board[i][column] === 0) {

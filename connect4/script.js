@@ -7,6 +7,7 @@ let firstPlayer = "user"; // Alternate between "user" and "ai" to change who goe
 let bestAiAction = null;
 
 function startGame() {
+    resetQValuesDisplay();
     if (firstPlayer === "ai") {
         firstPlayer = "user";
     } else {
@@ -27,9 +28,8 @@ function startGame() {
         currentPlayer = -1;
         isUsersTurn = true;
         document.getElementById("aiMove").disabled = true;
+        updateTurnMessage();
     }
-    updateTurnMessage();
-    resetQValuesDisplay();
     renderBoard();
 }
 

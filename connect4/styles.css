@@ -166,13 +166,15 @@ cursor: pointer;
 
 /* Media Queries for responsiveness */
 @media (max-width: 1040px) {
+  body {
+    align-items: flex-start; /* It will align the content to the top */
+  }
   .main-container {
       flex-direction: column;
       align-items: center;
       height: auto;
-      margin-top: 50px;
       padding-bottom: 1.25rem; /* use rem */
-      max-height: 90vh;
+      margin-top: 80px;
   }
 
   .row, .q-values, .buttons {

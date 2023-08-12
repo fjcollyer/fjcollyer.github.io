@@ -3,10 +3,15 @@ const board = Array(6).fill(null).map(() => Array(7).fill(0));
 
 let currentPlayer;
 let isUsersTurn;
-let firstPlayer = "user";
+let firstPlayer = "user"; // Alternate between "user" and "ai" to change who goes first
 let bestAiAction = null;
 
 function startGame(firstPlayer) {
+    if (firstPlayer === "ai") {
+        firstPlayer = "user";
+    } else {
+        firstPlayer = "ai";
+    }
     bestAiAction = null;
     for (let row of board) {
         for (let i = 0; i < row.length; i++) {

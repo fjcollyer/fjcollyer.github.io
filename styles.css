@@ -81,6 +81,10 @@ p {
   border-radius: 14%;
 }
 
+#resume {
+  border-radius: 0% !important;
+}
+
 #header h2,
 #projects h2 {
   margin-bottom: 0.2em;

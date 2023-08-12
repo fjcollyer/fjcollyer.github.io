@@ -6,7 +6,7 @@ let isUsersTurn;
 let firstPlayer = "user"; // Alternate between "user" and "ai" to change who goes first
 let bestAiAction = null;
 
-function startGame(firstPlayer) {
+function startGame() {
     if (firstPlayer === "ai") {
         firstPlayer = "user";
     } else {

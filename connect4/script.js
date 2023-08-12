@@ -155,12 +155,23 @@ function performAiMove() {
     // Use the best action we stored
     const action = bestAiAction;
 
-    console.log(`AI chose column ${action}`);
+    let moveMade = false;
+
     for (let i = 5; i >= 0; i--) {
         if (board[i][action] === 0) {
             board[i][action] = 1;
+            moveMade = true;
             break;
         }
+    }
+
+    if (!moveMade) {
+        isUsersTurn = false;
+        document.getElementById("aiMove").disabled = true;
+        const statusMessageElement = document.getElementById("statusText");
+        statusMessageElement.textContent = "Game Over! AI made an invalid move.";
+        renderBoard();
+        return;
     }
 
     if (hasGameEnded(board)) {

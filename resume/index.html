@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta property="og:title" content="Fredrik James Collyer - Resume & Portfolio">
+    <meta property="og:description" content="Personal website of Fredrik James Collyer">
+    <meta property="og:image" content="https://fjcollyer.github.io/images/profile.png">
+    <meta property="og:url" content="https://fjcollyer.github.io/">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Favicon for Browsers -->
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <!-- Apple Touch Icon for Mobile Devices -->
+    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
+  </head>
+  <body>
+    <div id="main-container">
+      <div class="container">
+        <!-- Left Container With Only Resume -->
+        <div id="header">
+          <div id="header-ic">
+          <h2 id="namee">Fredrik James Collyer</h2>
+            <div id="contact-info">
+              <a href="mailto:collyerfj@gmail.com" target="_blank"><img src="./images/email-icon.png" class="social-icon" alt="Email icon"></a>
+              <a href="https://www.linkedin.com/in/fredrik-james-collyer-24a351236/" target="_blank"><img src="./images/linkedin-icon.png" class="social-icon" alt="LinkedIn icon"></a>
+              <a href="https://github.com/fjcollyer" target="_blank"><img src="./images/github-icon.png" class="social-icon" alt="Github icon"></a>
+              <a href="https://twitter.com/fjcollyer" target="_blank"><img src="./images/x-icon.jpeg" class="social-icon" alt="X icon"></a>
+            </div>
+          </div>
+          <div class="about-entry">
+            <img id="profile-img" src="./images/profile.png" alt="Profile Image" />
+            <div class="about-info">
+              <p>Native Languages: English & Norwegian</p>
+              <p>Nationality: Norwegian</p>
+              <p>Socials: Icons top right. Alt contact: collyerfj@gmail.com</p>
+            </div>
+          </div>
+        </div>     
+        <div id="experience">
+          <h2>Experience</h2>
+          <div class="job">
+            <div class="job-info">
+                <h3>National Technical Director</h3>
+                <p>The Australian Workers' Union - Full-time</p>
+                <p>Jan 2023 - Present</p>
+                <p>Remote - Sydney, New South Wales, Australia</p>
+                <ul>
+                  <li>Optimized and managed databases using <strong>MySQL</strong> and <strong>NetSuite</strong>, leveraging <strong>SQL</strong> and <strong>SuiteScript</strong>.</li>
+                  <li>Leveraged <strong>AWS</strong> cloud services to deploy, monitor, and scale applications.</li>
+                  <li>Programmed automation scripts and tools in <strong>Python</strong> and <strong>JavaScript</strong> to optimize various operational processes.</li>
+              </ul>
+            </div>
+         </div>
+          <div class="job">
+            <div class="job-info">
+              <h3>Soldier - Royal Norwegian Air Force</h3>
+              <p>Royal Norwegian Air Force - Full-time</p>
+              <p>Aug 2020 - Sep 2021</p>
+              <p>On-site - Oslo, Norway</p>
+              <ul>
+                  <li>Collaborated in diverse teams, honing communication and teamwork skills.</li>
+                  <li>Engaged in tactical problem-solving scenarios, requiring rapid adaptation and critical thinking.</li>
+                  <li>Managed and maintained sophisticated military equipment, showcasing attention to detail.</li>
+              </ul>              
+            </div>
+          </div>
+        </div>
+        <div id="education">
+          <h2>Education</h2>
+          <div class="education-entry">
+            <img id="usyd-img" src="./images/usyd-icon.png" alt="USYD Image" />
+            <div class="education-info">
+              <h3>University of Sydney</h3>
+              <p>Bachelor of Computer Science</p>
+              <p>Jan 2022 - Apr 2023</p>
+              <p>Dalyell Scholarship Student</p>
+            </div>
+          </div>
+        </div>
+        <div id="projects">
+          <h2>Projects</h2>
+          <div class="project">
+              <div class="project-container">
+                  <img class="project-img" src="./images/connect4-icon.png" alt="Project Image" />
+                  <div class="project-info">
+                      <h3>Deep Q-Learning Connect4 AI</h3>
+                      <p>Developed an AI model leveraging <strong>PyTorch</strong> and <strong>Deep Q-Learning</strong> techniques that learned Connect 4 through self-play. Users can challenge the AI on the website. The model trained autonomously without human-play or external data input. An <strong>API</strong>, hosted on <strong>Google Cloud Run</strong>, serves the AI's moves in real-time during gameplay.</p>
+                      <div class="project-buttons">
+                          <button class="btn" onclick="window.location.href='https://fjcollyer.github.io/connect4/'">Website</button>
+                          <button class="btn" onclick="window.open('https://github.com/fjcollyer/connect4-deep-q-network', '_blank')">Code</button>
+                          <button class="btn" onclick="window.open('https://www.youtube.com/watch?v=NeTY1lkydIM', '_blank')">Demo</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="project">
+              <div class="project-container">
+                  <img class="project-img" src="./images/crypto-icon.png" alt="Project Image" />
+                  <div class="project-info">
+                    <h3>Crypto Dashboard Web App</h3>
+                    <p>Created a dynamic dashboard using <strong>React</strong> and <strong>Tailwind CSS</strong> to display real-time cryptocurrency data. Integrated <strong>Firebase</strong> for backend operations and user authentication. Leveraged the <strong>React Context API</strong> for seamless state management.</p>                    
+                      <div class="project-buttons">
+                          <button class="btn" onclick="window.open('https://jc-crypto-app.web.app/', '_blank')">Website</button>
+                          <button class="btn" onclick="window.open('https://github.com/fjcollyer/jc-crypto', '_blank')">Code</button>
+                          <button class="btn" onclick="window.open('https://www.youtube.com/watch?v=02uuoGEX-UE', '_blank')">Demo</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+  </body>
+</html>

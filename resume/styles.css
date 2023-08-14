@@ -1,3 +1,22 @@
+@media print {
+  /* Reset backgrounds */
+  body, a, img, div {
+      background: transparent !important;
+      box-shadow: none !important;
+  }
+
+  /* Adjust button styles for print */
+  .btn {
+      background-color: #007BFF !important;
+      color: #ffffff !important;
+      box-shadow: none !important;
+      transform: none !important;
+  }
+
+  /* Other print styles as needed */
+}
+
+
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: #F0F0F0;
@@ -26,7 +45,7 @@ p, li {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 45%;
+  width: 100%;
 }
 
 .container {

@@ -28,7 +28,7 @@
           <h2 id="namee">Fredrik James Collyer</h2>
             <div id="contact-info">
               <a href="mailto:collyerfj@gmail.com" target="_blank"><img src="./images/email-icon.png" class="social-icon" alt="Email icon"></a>
-              <a href="https://www.linkedin.com/in/fredrik-james-collyer-24a351236/" target="_blank"><img src="./images/linkedin-icon.png" class="social-icon" alt="LinkedIn icon"></a>
+              <a href="https://www.linkedin.com/in/fjcollyer/" target="_blank"><img src="./images/linkedin-icon.png" class="social-icon" alt="LinkedIn icon"></a>
               <a href="https://github.com/fjcollyer" target="_blank"><img src="./images/github-icon.png" class="social-icon" alt="Github icon"></a>
               <a href="https://twitter.com/fjcollyer" target="_blank"><img src="./images/x-icon.jpeg" class="social-icon" alt="X icon"></a>
             </div>
@@ -38,7 +38,7 @@
             <div class="about-info">
               <p>Native Languages: English & Norwegian</p>
               <p>Nationality: Norwegian</p>
-              <p>Socials: Icons top right. Alt contact: collyerfj@gmail.com</p>
+              <p><a class="email-href" href="mailto:collyerfj@gmail.com" target="_blank">collyerfj@gmail.com</a> | +47 94450339</p>
             </div>
           </div>
         </div>     
@@ -46,23 +46,34 @@
           <h2>Experience</h2>
           <div class="job">
             <div class="job-info">
-                <h3>National Technical Director</h3>
-                <p>The Australian Workers' Union - Full-time</p>
-                <p>Jan 2023 - Present</p>
-                <p>Remote - Sydney, New South Wales, Australia</p>
+              <div class="job-image-info-container">
+                <img id="awu-img" src="./images/awu-icon.png" alt="AWU Image" />
+                <div>
+                  <h3>National Technical Director</h3>
+                  <p>The Australian Workers' Union - Full-time</p>
+                  <p>Jan 2023 - Present</p>
+                  <p>Remote - Sydney, Australia</p>
+                </div>
+              </div>
                 <ul>
-                  <li>Optimized and managed databases using <i>MySQL</i> and <i>NetSuite</i>, leveraging <i>SQL</i> and <i>SuiteScript</i>.</li>
-                  <li>Leveraged <i>AWS</i> cloud services to deploy, monitor, and scale applications.</li>
-                  <li>Programmed automation scripts and tools in <i>Python</i> and <i>JavaScript</i> to optimize various operational processes.</li>
+                  <li>Optimized and managed databases using MySQL and NetSuite, leveraging SQL and SuiteScript.</li>
+                  <li>Developed and maintained responsive websites using React/Next.js and TypeScript.</li>
+                  <li>Leveraged AWS cloud services to deploy, monitor, and scale applications.</li>
+                  <li>Programmed automation scripts and tools in Python and JavaScript to optimize various operational processes.</li>
               </ul>
             </div>
          </div>
           <div class="job">
             <div class="job-info">
-              <h3>Soldier</h3>
-              <p>Royal Norwegian Air Force - Full-time</p>
-              <p>Aug 2020 - Sep 2021</p>
-              <p>On-site - Oslo, Norway</p>
+              <div class="job-image-info-container">
+                <img id="luftforsvaret-img" src="./images/luftforsvaret-icon.png" alt="Airforce Image" />
+                <div>
+                  <h3>Soldier</h3>
+                  <p>Royal Norwegian Air Force - Full-time</p>
+                  <p>Aug 2020 - Sep 2021</p>
+                  <p>On-site - Oslo, Norway</p>
+                </div>
+              </div>
               <ul>
                   <li>Collaborated in diverse teams, honing communication and teamwork skills.</li>
                   <li>Engaged in tactical problem-solving scenarios, requiring rapid adaptation and critical thinking.</li>
@@ -90,12 +101,12 @@
                   <img class="project-img" src="./images/connect4-icon.png" alt="Project Image" />
                   <div class="project-info">
                       <h3>Deep Q-Learning Connect4 AI</h3>
-                      <p>Developed an AI model leveraging <i>PyTorch</i> and <i>Deep Q-Learning</i> techniques that learned Connect 4 through self-play. Users can challenge the AI on the website. The model trained autonomously without human-play or external data input. An <i>API</i>, hosted on <i>Google Cloud Run</i>, serves the AI's moves in real-time during gameplay.</p>
+                      <p>Developed an AI model leveraging PyTorch and Deep Q-Learning techniques that learned Connect 4 through self-play. Users can challenge the AI on the website. The model trained autonomously without human-play or external data input. An API, hosted on Google Cloud Run, serves the AI's moves in real-time during gameplay.</p>
                       <div class="project-buttons">
-                          <button class="btn" onclick="window.location.href='https://fjcollyer.github.io/connect4/'">Website</button>
-                          <button class="btn" onclick="window.open('https://github.com/fjcollyer/connect4-deep-q-network', '_blank')">Code</button>
-                          <button class="btn" onclick="window.open('https://www.youtube.com/watch?v=NeTY1lkydIM', '_blank')">Demo</button>
-                      </div>
+                        <a class="btn" href="https://fjcollyer.github.io/connect4/" target="_blank">Website</a>
+                        <a class="btn" href="https://github.com/fjcollyer/connect4-deep-q-network" target="_blank">Code</a>
+                        <a class="btn" href="https://www.youtube.com/watch?v=NeTY1lkydIM" target="_blank">Demo</a>
+                      </div>                    
                   </div>
               </div>
           </div>
@@ -104,12 +115,12 @@
                   <img class="project-img" src="./images/crypto-icon.png" alt="Project Image" />
                   <div class="project-info">
                     <h3>Crypto Dashboard Web App</h3>
-                    <p>Created a dynamic dashboard using <i>React</i> and <i>Tailwind CSS</i> to display real-time cryptocurrency data. Integrated <i>Firebase</i> for backend operations and user authentication. Leveraged the <i>React Context API</i> for seamless state management.</p>                    
-                      <div class="project-buttons">
-                          <button class="btn" onclick="window.open('https://jc-crypto-app.web.app/', '_blank')">Website</button>
-                          <button class="btn" onclick="window.open('https://github.com/fjcollyer/jc-crypto', '_blank')">Code</button>
-                          <button class="btn" onclick="window.open('https://www.youtube.com/watch?v=02uuoGEX-UE', '_blank')">Demo</button>
-                      </div>
+                    <p>Created a dynamic dashboard using React and Tailwind CSS to display real-time cryptocurrency data. Integrated Firebase for backend operations and user authentication. Leveraged the React Context API for seamless state management.</p>                    
+                    <div class="project-buttons">
+                      <a href="https://jc-crypto-app.web.app/" target="_blank" class="btn">Website</a>
+                      <a href="https://github.com/fjcollyer/jc-crypto" target="_blank" class="btn">Code</a>
+                      <a href="https://www.youtube.com/watch?v=02uuoGEX-UE" target="_blank" class="btn">Demo</a>
+                    </div>                  
                   </div>
               </div>
           </div>

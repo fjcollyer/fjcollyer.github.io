@@ -1,0 +1,3 @@
+                        <!-- <p>Created a dynamic dashboard using React and Tailwind CSS to display real-time cryptocurrency data. Integrated Firebase for backend operations and user authentication. Leveraged the React Context API for seamless state management.</p>    -->
+
+                                                <!-- <p>Developed an AI model leveraging PyTorch and Deep Q-Learning techniques that learned Connect 4 through self-play. Users can challenge the AI on the website. The model trained autonomously without human-play or external data input. An API, hosted on Google Cloud Run, serves the AI's moves in real-time during gameplay.</p> -->

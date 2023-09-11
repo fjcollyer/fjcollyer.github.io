@@ -22,12 +22,19 @@
   <body>
     <h1 id="main-title">Fredrik James Collyer</h1>
     <div id="contact-info">
-        <a href="./documents/resume-fjc.pdf" download target="_blank"><img src="./images/resume-icon.png" class="social-icon" id="resume" alt="Resume icon"></a>
-        <a href="mailto:collyerfj@gmail.com" target="_blank"><img src="./images/email-icon.png" class="social-icon" alt="Email icon"></a>
-        <a href="https://www.linkedin.com/in/fjcollyer/" target="_blank"><img src="./images/linkedin-icon.png" class="social-icon" alt="LinkedIn icon"></a>
-        <a href="https://github.com/fjcollyer" target="_blank"><img src="./images/github-icon.png" class="social-icon" alt="Github icon"></a>
-        <a href="https://twitter.com/fjcollyer" target="_blank"><img src="./images/x-icon.jpeg" class="social-icon" alt="X icon"></a>
-    </div>
+        <div id="social-icons">
+            <a href="mailto:collyerfj@gmail.com" target="_blank"><img src="./images/email-icon.png" class="social-icon" alt="Email icon"></a>
+            <a href="https://www.linkedin.com/in/fjcollyer/" target="_blank"><img src="./images/linkedin-icon.png" class="social-icon" alt="LinkedIn icon"></a>
+            <a href="https://github.com/fjcollyer" target="_blank"><img src="./images/github-icon.png" class="social-icon" alt="Github icon"></a>
+            <a href="https://twitter.com/fjcollyer" target="_blank"><img src="./images/x-icon.jpeg" class="social-icon" alt="X icon"></a>
+        </div>
+        <div>
+          <a href="./documents/resume-fjc-23.pdf" class="resume-button" download target="_blank">
+              Resume
+              <img src="./images/download-icon.png" alt="Download icon" class="download-icon">
+          </a>
+      </div>      
+    </div>      
     <div id="main-container">
       <div class="container">
         <!-- Left Container With Only Resume -->
@@ -36,9 +43,8 @@
           <div class="about-entry">
             <img id="profile-img" src="./images/profile.png" alt="Profile Image" />
             <div class="about-info">
+              <p><a class="email-href" href="mailto:collyerfj@gmail.com" target="_blank">collyerfj@gmail.com</a> | +61 407 479 967</p>
               <p>Native Languages: English & Norwegian</p>
-              <p>Nationality: Norwegian</p>
-              <p><a class="email-href" href="mailto:collyerfj@gmail.com" target="_blank">collyerfj@gmail.com</a> | +47 94450339</p>
             </div>
           </div>
         </div>     
@@ -47,19 +53,27 @@
           <div class="job">
             <img id="awu-img" src="./images/awu-icon.png" alt="AWU Image" />
             <div class="job-info">
-              <h3>National Technical Director</h3>
+              <h3>National Technology Director</h3>
               <p>The Australian Workers' Union - Full-time</p>
-              <p>Jan 2023 - Present</p>
-              <p>Remote - Sydney, Australia</p>
+              <p id="job-year"><i>Jan 2023 - Present  &middot; 9 mos </i></p>
             </div>
           </div>
+
+          <div class="job">
+            <img id="luftforsvaret-img" src="./images/cipher-logo.png" alt="Airforce Image" />
+            <div class="job-info">
+              <h3>Software Engineer</h3>
+              <p>Cipher Technologies - Full-time</p>
+              <p id="job-year"><i>Jan 2021 - Dec 2022 &middot; 2 yr</i></p>
+            </div>
+          </div>
+          
           <div class="job">
             <img id="luftforsvaret-img" src="./images/luftforsvaret-icon.png" alt="Airforce Image" />
             <div class="job-info">
               <h3>Soldier</h3>
               <p>Royal Norwegian Air Force - Full-time</p>
-              <p>Aug 2020 - Sep 2021</p>
-              <p>On-site - Oslo, Norway</p>
+              <p id="job-year"><i>Jan 2020 - Dec 2020 &middot; 1 yr</i></p>
             </div>
           </div>
         </div>
@@ -70,8 +84,16 @@
             <div class="education-info">
               <h3>University of Sydney</h3>
               <p>Bachelor of Computer Science</p>
-              <p>Jan 2022 - Apr 2023</p>
-              <p>Dalyell Scholarship Student</p>
+              <!-- <p>Jan 2022 - Apr 2023</p> -->
+              <p><i>Dalyell Scholarship Student</i></p>
+            </div>
+          </div>
+          <div class="education-entry">
+            <img id="usyd-img" src="./images/langhaugen.png" alt="USYD Image" />
+            <div class="education-info">
+              <h3>Langhaugen High School</h3>
+              <p>High School Diploma</p>
+              <p><i>99.75 ATAR &middot; 4.0 GPA</i></p>
             </div>
           </div>
         </div>
@@ -85,7 +107,7 @@
                     <img class="project-img" src="./images/connect4-icon.png" alt="Project Image" />
                     <div class="project-info">
                         <h3>Deep Q-Learning Connect4 AI</h3>
-                        <p>Developed an AI model leveraging PyTorch and Deep Q-Learning techniques that learned Connect 4 through self-play. Users can challenge the AI on the website. The model trained autonomously without human-play or external data input. An API, hosted on Google Cloud Run, serves the AI's moves in real-time during gameplay.</p>
+                        <p>Created a self-learning Connect 4 AI using PyTorch and Deep Q-Learning, served via Google Cloud API.</p>
                         <div class="project-buttons">
                             <button class="btn" onclick="window.location.href='https://fjcollyer.github.io/connect4/'">Website</button>
                             <button class="btn" onclick="window.open('https://github.com/fjcollyer/connect4-deep-q-network', '_blank')">Code</button>
@@ -95,11 +117,25 @@
                 </div>
             </div>
             <div class="project">
+              <div class="project-container">
+                  <img class="project-img" src="./images/headfirst.png" alt="Project Image" />
+                  <div class="project-info">
+                      <h3>Mental Health Campaign Website</h3>
+                      <p>Built and deployed the Australian Workers Union's Headfirst campaign website, with automated updates and CMS admin features.</p>
+                      <div class="project-buttons">
+                          <button class="btn" onclick="window.open('https://head-first.com.au/', '_blank')">Website</button>
+                          <!-- Single disabled button with disclaimer -->
+                          <button class="btn btn-disabled" style="flex-grow: 1;" disabled>IP owned by AWU</button>
+                      </div>
+                  </div>
+              </div>
+            </div>                     
+            <div class="project">
                 <div class="project-container">
                     <img class="project-img" src="./images/crypto-icon.png" alt="Project Image" />
                     <div class="project-info">
                         <h3>Crypto Dashboard Web App</h3>
-                        <p>Created a dynamic dashboard using React and Tailwind CSS to display real-time cryptocurrency data. Integrated Firebase for backend operations and user authentication. Leveraged the React Context API for seamless state management.</p>   
+                        <p>Built a real-time cryptocurrency dashboard using React, Tailwind CSS, and Firebase for backend and authentication.</p>
                         <div class="project-buttons">
                             <button class="btn" onclick="window.open('https://jc-crypto-app.web.app/', '_blank')">Website</button>
                             <button class="btn" onclick="window.open('https://github.com/fjcollyer/jc-crypto', '_blank')">Code</button>
@@ -108,6 +144,12 @@
                     </div>
                 </div>
             </div>
+            <div id="skills">
+              <h2>Skills</h2>
+              <p id="skills-list">
+                Python &middot; JavaScript &middot; TypeScript &middot; HTML &middot; CSS &middot; React &middot; React-three/fiber &middot; Three.js &middot; Redux &middot; Next.js &middot; Node.js &middot; Flask &middot; Deep Learning &middot; Machine Learning &middot; PyTorch &middot; API Development &middot; Google Cloud Platform &middot; Tailwind CSS &middot; Firebase &middot; React Context API &middot; Git &middot; GitHub &middot; JSON &middot; REST APIs &middot; Database Management &middot; SQL &middot; NoSQL &middot; MongoDB &middot; PostgreSQL &middot; MySQL &middot; Docker &middot; AWS &middot; NetSuite &middot; Java &middot; C &middot; C++
+              </p>
+            </div>            
         </div>    
     </div>
   </body>

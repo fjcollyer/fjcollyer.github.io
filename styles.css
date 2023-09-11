@@ -7,14 +7,21 @@ body {
   justify-content: center;
   align-items: center;
   height: auto;
+  
   min-height: 100vh;
   flex-direction: column;
 }
 
+#skills-list {
+  font-size: 0.9em;
+  padding: 2px;
+  text-align: justify;
+}
+
 p {
   margin: 2px 0;
-  color: #444;
-  font-size: 0.9em;
+  color: #2e2e2e;
+  font-size: 1em;
 }
 
 #main-title {
@@ -57,6 +64,7 @@ p {
     max-width: 50px;
     max-height: 50px;
     object-fit: cover;
+    
   }
   #main-title {
     font-size: 1.5rem;
@@ -86,23 +94,72 @@ p {
   text-decoration: inherit;
 }
 
-#resume {
-  border-radius: 0% !important;
+.social-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  margin-left: 5px;
+  border-radius: 14%;
 }
 
-#header h2,
-#projects h2 {
-  margin-bottom: 0.2em;
+.email-href {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.resume-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7DF9FF;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-weight: 800;
+  width: 148px; /* Adjust width to fit icon */
+  transition: all 0.3s ease;
+  padding: 0 8px; /* Added padding to give space for the icon */
+}
+
+.download-icon {
+  margin-left: 8px;  /* Space between text and icon */
+  width: 16px;  /* Adjust the icon size */
+  height: auto;
+}
+
+/* Hover state */
+.resume-button:hover {
+  background-color: #00FFFF;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+}
+
+/* Active state */
+.resume-button:active {
+  background-color: #00FFFF;
+  box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.1);
+  transform: translateY(4px);
+}
+
+
+#social-icons {
+  display: block;
+  text-align: center;  /* Center align the icons */
+  margin-bottom: 10px;
 }
 
 #contact-info {
-  font-size: 1.1em;
-  font-weight: 600;
-  color: #555;
+  text-align: center; /* Center align the entire contact info section */
 }
 
-#contact-info span {
-  margin: 0 10px;
+
+
+#job-year {
+  font-size: 0.9em;
+  color: gray;
 }
 
 .about-entry,
@@ -145,34 +202,49 @@ h2 {
   margin-top: 1em;
 }
 
+.disclaimer {
+  font-size: 0.7em;
+  color: grey;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.btn-disabled {
+  background-color: #ccc !important;
+  cursor: not-allowed !important;
+  color: #888 !important;
+  width: 160px;
+  max-width: 176px;
+}
+
 .project-container {
   display: flex;
-  align-items: center;
+  gap: 1em; /* add some space between the image and the info */
 }
 
 .project-img {
-  height: 150px;
-  width: 150px;
-  margin-right: 1em;
+  height: 130px; /* reduce the size of the image */
+  width: 130px; /* reduce the size of the image */
   object-fit: contain;
   border-radius: 4%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .project-info {
   display: flex;
   flex-direction: column;
-  width: 100%;
-}
-
-.project-info p {
-  margin: 0 0 1em 0;
-  color: #444;
-  font-size: 0.9em;
+  justify-content: space-between;
 }
 
 .project-info h3 {
   margin: 0 0 0.5em 0;
   font-size: 1.2em;
+}
+
+.project-info p {
+  margin: 0 0 1em 0;
+  color: #2e2e2e;
+  font-size: 0.9em;
 }
 
 .project-buttons {
